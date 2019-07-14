@@ -102,15 +102,23 @@ spec:
 
 ```
 kubectl apply -f azurevote.yml
+NAME                                READY   STATUS              RESTARTS   AGE                                                    azure-vote-back-6797f49554-v52kl    0/1     ContainerCreating   0          5s                                                     azure-vote-front-559d85d4f7-8dl9z   0/1     ContainerCreating   0          5s                                                     iis-19h1-85d5bb7558-857g7           1/1     Running             0          5h13m                                                  azure-vote-front-559d85d4f7-8dl9z   1/1     Running             0          53s                                                    azure-vote-back-6797f49554-v52kl    1/1     Running             0          78s            
 ```
 
 그리고 로드밸런서가 초기화되어 IP가 할당되기까지 아래 명령을 사용하여 결과를 확인하고 기다립니다.
 
 ```
 kubectl get svc --watch
+NAME               TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)        AGE
+azure-vote-back    ClusterIP      10.0.162.176   <none>           6379/TCP       86s
+azure-vote-front   LoadBalancer   10.0.99.224    52.231.165.172   80:31508/TCP   86s
+iis                LoadBalancer   10.0.223.9     52.231.163.195   80:30581/TCP   5h14m
+kubernetes         ClusterIP      10.0.0.1       <none>           443/TCP        5h44m
 ```
 
 IP 주소가 나타나면 웹 브라우저를 열어 접속한 후, 임의로 버튼을 눌렀을 때 값이 증가하는지 확인해봅니다.
+
+![Hybrid 클러스터 상에서의 Azure Vote 실행 예시](azure-vote-result.png)
 
 # 마무리
 
