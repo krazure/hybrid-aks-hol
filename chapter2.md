@@ -67,21 +67,21 @@ cd ~/aks-test/
       "orchestratorRelease": "1.15"
     },
     "masterProfile": {
-      "count": 3,
+      "count": 2,
       "dnsPrefix": "",
       "vmSize": "Standard_D2_v3"
     },
     "agentPoolProfiles": [
       {
         "name": "linuxpool1",
-        "count": 2,
+        "count": 1,
         "vmSize": "Standard_D2_v3",
         "availabilityProfile": "VirtualMachineScaleSets",
         "storageProfile" : "ManagedDisks"
       },
       {
         "name": "windowspool2",
-        "count": 2,
+        "count": 1,
         "vmSize": "Standard_D2_v3",
         "availabilityProfile": "VirtualMachineScaleSets",
         "osType": "Windows",
