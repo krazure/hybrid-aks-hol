@@ -18,6 +18,8 @@
 
 그리고 실습의 편의를 위하여 이 핸즈온랩 모듈은 모든 명령줄 예시를 PowerShell 문법을 사용하여 설명합니다. Windows에서는 내장된 PowerShell을 사용할 수 있으며, Linux와 macOS에서는 PowerShell 6.0 이상을 별도로 설치하여 사용할 수 있습니다. 또한 원하지 않으면 PowerShell 대신 Bash 셸 문법이나 다른 방법으로 이 문서에서 설명하는 내용을 따라할 수도 있습니다.
 
+> 만약 Windows OS에서 이 핸즈온랩 모듈을 따라하는데 문제가 있을 경우, 별도의 리눅스 가상 컴퓨터를 만들거나 Windows Subsystem for Linux를 사용하여 진행하시는 것을 권장합니다.
+
 여러분께서 사용하는 컴퓨터 환경에 따라 적절한 Chapter를 찾아 설치를 진행하도록 합니다.
 
 ## Windows
@@ -26,7 +28,7 @@ Windows에는 PowerShell 5.x 버전이 이미 내장되어있습니다. 실습�
 
 필요한 소프트웨어의 쉬운 설치를 위하여 Chocolatey Package Manager를 설치하도록 합니다.
 
-PowerShell을 실행하여 아래 명령을 입력합니다.
+관리자 권한으로 PowerShell을 시작한 다음, 아래 명령을 입력합니다.
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
