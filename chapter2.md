@@ -9,7 +9,7 @@
 $resourceGroup = "..."
 
 # 사용할 데이터센터의 위치를 지정합니다. 원하는 다른 위치로 변경해도 무방합니다. (예: westus2)
-$location = "koreasouth"
+$location = "koreacentral"
 
 # Kubernetes 클러스터에 붙일 고유 도메인 이름에 사용할 DNS 접두사입니다. (예: wink8s1)
 $dnsPrefix = "..."
