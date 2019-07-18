@@ -120,6 +120,30 @@ IP 주소가 나타나면 웹 브라우저를 열어 접속한 후, 임의로 �
 
 ![Hybrid 클러스터 상에서의 Azure Vote 실행 예시](azure-vote-result.png)
 
+# 내부 네트워크 기능 테스트해보기
+
+정상적으로 클러스터가 구성되었다면, 서비스 디스커버리 기능에 의하여 내부에서 전체 도메인 네임을 입력하지 않고 다른 서비스와도 통신할 수 있습니다.
+
+아래와 같이 명령을 실행하여 Windows 컨테이너 기반의 셸을 시작하도록 하겠습니다.
+
+```powershell
+kubectl run -i --tty testpod --image=mcr.microsoft.com/windows/nanoserver:1903 -- cmd
+```
+
+잠시 기다리면 명령 프롬프트가 새로 실행됩니다. 만약 연결이 바로 맺어지지 않으면 실행 중인 pod의 이름을 조회하여 다음의 명령을 `<podname>` 부분을 바꾸어 실행합니다.
+
+```powershell
+kubectl attach <podname> -c testpod -i -t
+```
+
+이어서 다음의 명령을 실행하여 HTTP 응답이 반환되는지 확인해봅니다.
+
+```powershell
+curl iis
+curl azure-vote-front
+curl google.com
+```
+
 # 마무리
 
 모든 실습이 완료되었습니다. 새로 만든 Kubernetes 클러스터를 사용하지 않는다면 아래 명령을 사용하여 해당 리소스 그룹을 정리하도록 합니다. (`$resourceGroup` 환경 변수는 [이전 단원](chapter2.md)에서 정의했던 것입니다.)
