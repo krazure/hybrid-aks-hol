@@ -67,7 +67,7 @@ cd ~/aks-test/
       "orchestratorRelease": "1.15"
     },
     "masterProfile": {
-      "count": 2,
+      "count": 3,
       "dnsPrefix": "",
       "vmSize": "Standard_D2_v3"
     },
