@@ -149,5 +149,5 @@ curl google.com
 모든 실습이 완료되었습니다. 새로 만든 Kubernetes 클러스터를 사용하지 않는다면 아래 명령을 사용하여 해당 리소스 그룹을 정리하도록 합니다. (`$resourceGroup` 환경 변수는 [이전 단원](chapter2.md)에서 정의했던 것입니다.)
 
 ```powershell
-az group delete $resourceGroup
+az group delete --name $resourceGroup --no-wait
 ```
