@@ -69,20 +69,20 @@ cd ~/aks-test/
     "masterProfile": {
       "count": 3,
       "dnsPrefix": "",
-      "vmSize": "Standard_D2_v3"
+      "vmSize": "Standard_DS2_v2"
     },
     "agentPoolProfiles": [
       {
         "name": "linuxpool1",
         "count": 1,
-        "vmSize": "Standard_D2_v3",
+        "vmSize": "Standard_DS2_v2",
         "availabilityProfile": "VirtualMachineScaleSets",
         "storageProfile" : "ManagedDisks"
       },
       {
         "name": "windowspool2",
         "count": 1,
-        "vmSize": "Standard_D2_v3",
+        "vmSize": "Standard_DS2_v2",
         "availabilityProfile": "VirtualMachineScaleSets",
         "osType": "Windows",
         "storageProfile" : "ManagedDisks"
